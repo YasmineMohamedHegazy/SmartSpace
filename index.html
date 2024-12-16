@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-Myv9Q2cdWghu/ED1dOT/ur2R84EsnIzVYh7RRcnY1cwF2mL3T1X4L3myeYU3R8KnHc6jJdc5yvLq7e2++TKg6g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-Myv9Q2cdWghu/ED1dOT/ur2R84EsnIzVYh7RRcnY1cwF2mL3T1X4L3myeYU3R8KnHc6jJdc5yvLq7e2++TKg6g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .topnav {
+            overflow: hidden;
+            background-color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: center; /* Center align the items */
+            align-items: center;
+            position: relative; /* Ensure the login link can be positioned absolutely */
+        }
+
+        .topnav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            display: flex;
+            font-size: 14px; /* Decreased font size */
+        }
+
+        .topnav li {
+            margin: 0 20px; /* Increased margin for more space between items */
+        }
+
+        .topnav a {
+            display: block;
+            color: black;
+            text-align: center;
+            padding: 14px 16px; /* Adjust padding for more space inside links */
+            text-decoration: none;
+            ize: 14px; /* Decreased font size */
+        }
+
+        .topnav a:hover {
+            background-color: black;
+            color: white;
+        }
+
+        .login-link {
+            position: absolute; /* Position it absolutely */
+            right: 20px;
+            top: 10px;
+        }
+
+        .login-link a {
+            background-color: black;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 12px; /* Decreased font size */
+        }
+
+        .login-link a:hover {
+            background-color: #28282B;
+            color: white;
+        }
+
+        .nav-search-bar {
+            display: none;
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 10px;
+            z-index: 999;
+        }
+
+        .nav-search-bar.active {
+            display: block;
+        }
+
+        .nav-search-bar form {
+            position: relative;
+        }
+
+        .nav-search-bar input[type="text"] {
+            width: 200px;
+            padding: 8px;
+            border: none;
+            border-bottom: 1px solid #ccc;
+            outline: none;
+            font-size: 14px;
+        }
+
+        .nav-search-bar span {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+
+        #quik-search-btn {
+            background-color: transparent; /* Transparent background */
+            border: none;
+            cursor: pointer;
+            font-size: 14px; /* Decreased font size */
+            color: black;
+            padding: 5px 10px; /* Adjust padding as needed */
+        }
+
+        .catalog-menu {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .catalog-menu.active {
+            display: block;
+        }
+
+        .catalog-menu ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .catalog-menu ul li {
+            padding: 10px 15px;
+        }
+
+        .catalog-menu ul li a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .catalog-menu ul li a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .slideshow-container {
+            position: relative;
+            max-width: 100%;
+            margin: auto;
+            overflow: hidden;
+
+        }
+
+        .mySlides {
+            display: none;
+            position: relative;
+        }
+
+        .mySlides img {
+            width: 100%;
+            height: auto;
+        }
+
+        .text, .text1 {
+            font-family: 'Times New Roman', serif; /* Change to Times New Roman */
+        }
+
+
+    .text {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for exact center alignment */
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    font-weight: bold; /* Makes the text bold */
+    background-color: rgba(0, 0, 0, 0.5); /* Optional: Add a semi-transparent background to improve readability */
+    text-align: center; /* Center text within the .text div */
+    width: 80%; /* Adjust width as needed */
+}
+
+        .text1 {
+            position: absolute;
+            top: 20px;
+            center: 20px;
+            color: Black;
+            padding: 20px;
+            border-radius: 5px;
+            font-weight: bold; /* Makes the text bold */
+
+        }
+
+
+        .text h2 {
+            font-size: 27px;
+            margin: 0 0 10px 0;
+        }
+
+        .text p {
+            font-size: 18px;
+            margin: 0 0 10px 0;
+        }
+        .text1 button {
+            background-color: black;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-weight: bold; /* Makes the button text bold */
+        }
+
+        .text1 button:hover {
+            background-color: white;
+            color:black;
+        }
+        .text button {
+            background-color: black;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-weight: bold; /* Makes the button text bold */
+        }
+
+        .text button:hover {
+            background-color: black;
+            color:white;
+        }
+
+        .slideshow-controls {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .slideshow-controls button {
+            background-color: transparent;
+            border: none;
+            color: black;
+            font-size: 18px;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .slideshow-controls button:hover {
+            background-color: #f1f1f1;
+        }
+
+        .section {
+            background-color: #f9f9f9;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .section h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .column {
+            flex: 0 0 calc(33.33% - 20px);
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #fff;
+            text-align: center;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .column img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .column h3 {
+            color: #333;
+            margin-top: 10px;
+            font-size: 14px; /* Decreased font size */
+        }
+
+        .footer {
+            background-color: #F5F5F5;
+            padding: 20px;
+            text-align: center;
+            clear: both;
+            margin-top: 20px;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .footer-section {
+            flex: 1 1 300px;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .footer-section h3 {
+            color: black;
+            margin-bottom: 10px;
+        }
+
+        .footer-section p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .footer-section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-section a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        .footer-section a:hover {
+            color: #000;
+        }
+
+        .footer-bottom {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+        .social-media-icons {
+    display: flex; /* Use flexbox to align items horizontally */
+    align-items: center; /* Align items vertically centered */
+}
+
+.social-media-icons a {
+    color: black;
+    font-size: 16px;
+    margin-left: 5px; /* Space between icons */
+    text-decoration: none;
+}
+
+.social-media-icons a:hover {
+    color: #f1f1f1; /* Change color on hover */
+}
+
+
+
+
+
+
+
+
+
+
+* {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+position: absolute;
+top: 50%; /* Center vertically */
+left: 50%; /* Center horizontally */
+transform: translate(-50%, -50%); /* Adjust for exact center alignment */
+color: white;
+padding: 20px;
+border-radius: 5px;
+font-weight: bold; /* Makes the text bold */
+background-color: rgba(0, 0, 0, 0.5); /* Optional: Add a semi-transparent background to improve readability */
+text-align: center; /* Center text within the .text div */
+width: 80%; /* Adjust width as needed */
+}
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #000000;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+    </style>
+</head>
+<body>
+    <div class="topnav">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#" id="catalog-link">Shop</a></li>
+            <li><a href="Twinkleshoppingcart.html">Contact Us</a></li>
+            <li><a href="#">My Orders</a></li>
+        </ul>
+
+        <div class="login-link">
+            <a href="Twinklelogin.html">Log In</a>
+        </div>
+        <i class="fa fa-shopping-cart"></i>
+        <div class="social-media-icons">
+            <a href="https://facebook.com" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+
+            <a href="https://instagram.com" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://linkedin.com" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+
+        <button id="quik-search-btn" type="button"><i class="fas fa-search"></i></button>
+    </div>
+
+    <!-- Catalog Menu -->
+    <div class="catalog-menu" id="catalog-menu">
+        <ul>
+            <li><a href="">Mobiles</a></li>
+            <li><a href="">Laptops</a></li>
+
+        </ul>
+    </div>
+
+    <!-- Search Bar -->
+    <div class="nav-search-bar" id="search-bar">
+        <form id="search-form">
+            <input name="search" value="" type="text" class="form-control" placeholder="Search...">
+            <span id="search-close"><i class="fas fa-times"></i></span>
+        </form>
+    </div>
+
+    <br>
+
+    <!-- The dots/circles -->
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+
+    <!-- Slideshow -->
+    <div class="slideshow-container">
+        <div class="mySlides">
+            <img src="C:\Users\Admin\OneDrive - Arab Academy for Science and Technology\Pictures\Screenshots\Screenshot (458).png" alt="Slide 1">
+            <div class="text">
+                <h2>Welcome to SmartSpace.</h2>
+                <p>Explore cutting-edge technology and the latest innovations.</p>
+                <button>Shop Now</button>
+            </div>
+        </div>
+
+        <div class="mySlides">
+          <img src="C:\Users\Admin\OneDrive - Arab Academy for Science and Technology\Pictures\Screenshots\Screenshot (461).png" alt="Slide 2">
+
+
+            <div class="text1">
+                <h2>Latest Tech Releases.</h2>
+                <p>Discover our newest arrivals in mobiles and laptops.</p>
+                <button>Shop Now</button>
+            </div>
+        </div>
+
+
+        </div>
+
+        <div class="mySlides">
+            <img src="C:\Users\Admin\OneDrive - Arab Academy for Science and Technology\Pictures\Screenshots\Screenshot (473).png" alt="Slide 3">
+
+        </div>
+
+        <div class="slideshow-controls">
+
+            <button class="next">❯</button>
+        </div>
+    </div>
+
+    <!-- Sections -->
+    <div class="section">
+        <h2>Featured Products</h2>
+        <div class="row">
+            <div class="column">
+                <img src="C:\Users\Admin\OneDrive - Arab Academy for Science and Technology\Pictures\Screenshots\Screenshot (474).png" alt="Product 1">
+                <h3>SamSung xxx</h3>
+            </div>
+            <div class="column">
+                <img src="C:\Users\Admin\OneDrive - Arab Academy for Science and Technology\Pictures\Screenshots\Screenshot (464).png" alt="Product 2">
+                <h3>Laptop xxx</h3>
+            </div>
+            <div class="column">
+                <img src="C:\Users\Admin\OneDrive - Arab Academy for Science and Technology\Pictures\Screenshots\Screenshot (453).png" alt="Product 3">
+                <h3>Tablet xxx</h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>Welcome to SmartSpace, your premier destination for cutting-edge mobile devices and laptops. Our mission is to provide you with the newest trends and most innovative technologies at competitive prices, ensuring you stay ahead in the digital age.<br> Explore our extensive collection and experience the future of technology with SmartSpace.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Shop</a></li>
+
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Shopping Cart</a></li>
+
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: support@SmartSpace.com</p>
+                <p>Phone: +(20) 34567890</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2024 SmartSpace. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        // Slideshow functionality
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 2000); // Change image every 2 seconds
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchBtn = document.getElementById('quik-search-btn');
+            const searchBar = document.getElementById('search-bar');
+            const searchForm = document.getElementById('search-form');
+            const searchInput = searchForm.querySelector('input[type="text"]');
+            const searchRemove = document.getElementById('search-close');
+            const catalogLink = document.getElementById('catalog-link');
+            const catalogMenu = document.getElementById('catalog-menu');
+
+            searchBtn.addEventListener('click', function() {
+                searchBar.classList.toggle('active');
+                searchInput.focus();
+            });
+
+            searchRemove.addEventListener('click', function() {
+                searchBar.classList.remove('active');
+                searchInput.value = '';
+            });
+
+            catalogLink.addEventListener('click', function() {
+                catalogMenu.classList.toggle('active');
+            });
+
+            // Example filter functionality
+            searchForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+                const searchTerm = searchInput.value.toLowerCase();
+                const productNames = document.querySelectorAll('.column h3');
+
+                productNames.forEach(function(productName) {
+                    const text = productName.textContent.toLowerCase();
+                    const parentColumn = productName.parentNode;
+
+                    if (text.includes(searchTerm)) {
+                        parentColumn.style.display = 'block';
+                    } else {
+                        parentColumn.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+
+
+</body>
+</html>
